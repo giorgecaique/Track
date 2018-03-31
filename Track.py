@@ -70,7 +70,7 @@ def greedy_choice_property(x, y):
             elif euclidian_distance(next_x,next_y) < selected_distance and len(types_visited) < k:
                 selected_distance = euclidian_distance(next_x,next_y)
                 selected_x, selected_y = next_x,next_y
-            elif euclidian_distance(next_x,next_y) < selected_distance and game_map[next_y][next_x] == game_map[y][x]: # if the algorithm can't visit a new type, it selects only the matching type with the current square
+            if euclidian_distance(next_x,next_y) < selected_distance and game_map[next_y][next_x] in types_visited: # if the algorithm can't visit a new type, it selects only the matching type with the current square
                 selected_distance = euclidian_distance(next_x,next_y)
                 selected_x, selected_y = next_x,next_y
      
